@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap");
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Inter';
+  font-weight: 700;
+  color: #000000;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+}
+
+input {
+  font-family: 'Inter';
+  color: #000000;
+  font-size: 20px;
+  padding: 5px 20px;
+  border: solid #000 2px;
+  border-radius: 5px;
+}
+
+button {
+  font-family: 'Inter';
+  color: #000000;
+  font-size: 20px;
+  padding: 5px 20px;
+  border: solid #000 2px;
+  border-radius: 5px;
+}
+
+p {
+  font-size: 20px;
+  margin: 0;
+}
+
+#title h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0;
+}
+
+#buttonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+#buttonWrapper p {
+  font-size: 20px;
+}
+
+#wrapper {
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+#wrapper #codeWrapper, #wrapper #goBack {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#grid {
+  width: 370px;
+  height: 370px;
+  position: relative;
+  display: none;
+  padding: 25px 25px 40px 40px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../../public/back.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#grid button {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  z-index: 999;
+  border: none !important;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../../public/board.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#grid button img {
+  margin: 0;
+  width: 60%;
+  -webkit-animation: expand;
+          animation: expand;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+#grid button:disabled {
+  -webkit-filter: grayscale(0.6);
+          filter: grayscale(0.6);
+}
+
+#line {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  height: 7px;
+  width: 320px;
+  border: solid #000;
+  background: #000;
+  border-radius: 20px;
+}
+
+@-webkit-keyframes expand {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes expand {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #wrapper {
+    width: 80%;
+  }
+  #grid {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}

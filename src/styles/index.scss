@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap');
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Inter';
+    font-weight: 700;
+    color: #000000;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+input {
+    font-family: 'Inter';
+    color: #000000;
+    font-size: 20px;
+    padding: 5px 20px;
+    border:  solid #000 2px;
+    border-radius: 5px;
+}
+
+button {
+    font-family: 'Inter';
+    color: #000000;
+    font-size: 20px;
+    padding: 5px 20px;
+    border:  solid #000 2px;
+    border-radius: 5px;
+}
+
+p {
+    font-size: 20px;
+    margin: 0;
+}
+
+#title {
+    h1 {
+        font-size: 40px;
+        font-weight: 800;
+        margin: 0;
+    }
+}
+
+#buttonWrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 20px;
+
+    p { font-size: 20px }
+}
+
+#wrapper {
+    border: solid;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 50px;
+
+    #codeWrapper, #goBack {
+        display: none;
+        flex-flow: column nowrap;
+    }
+}
+
+#grid {
+    width: 370px;
+    height: 370px;
+    position: relative;
+    display: none;
+    padding: 25px 25px 40px 40px;
+    
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../../public/back.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    button {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+        z-index: 999;
+        border: none !important;
+        background: transparent;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-image: url("../../public/board.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        img {
+            margin: 0;
+            width: 60%;
+            animation: expand;
+            animation-duration: 200ms;
+            animation-timing-function: ease-in-out;
+        }
+
+        &:disabled {
+            filter: grayscale(0.6);
+        }
+    }
+}
+
+#line {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    height: 7px;
+    width: 320px;
+    border: solid #000;
+    background: #000;
+    border-radius: 20px;
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #wrapper {
+        width: 80%;
+    }
+
+    #grid {
+        transform: scale(0.8);
+    }
+}
